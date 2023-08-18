@@ -45,21 +45,26 @@ app.post("/convert", async (req, res) => {
     console.log('====== prompt =====>', prompt)
 
     // New
-    openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
-    // model: "gpt-4",
-    messages: [{"role": "user", "content": "Hello!"}],
-    }).then(chatCompletion => {
-        console.log('completion =====>', chatCompletion.choices[0].message)
-        res.json({
+    // openai.chat.completions.create({
+    // model: "gpt-3.5-turbo",
+    // // model: "gpt-4",
+    // messages: [{"role": "user", "content": "Hello!"}],
+    // }).then(chatCompletion => {
+    //     console.log('completion =====>', chatCompletion.choices[0].message)
+    //     res.json({
+    //         message: "Successful",
+    //         response: chatCompletion.choices[0].message,
+    //     });
+    // }).catch(err => {
+    //     console.log('err =====>', err.message)
+    // }).finally(() => {
+    //     console.log('finally =====>')
+    // })
+
+    res.json({
             message: "Successful",
-            response: chatCompletion.choices[0].message,
+            response: "hello",
         });
-    }).catch(err => {
-        console.log('err =====>', err.message)
-    }).finally(() => {
-        console.log('finally =====>')
-    })
 
 
 
